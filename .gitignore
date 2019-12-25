@@ -1,0 +1,6 @@
+*.o
+*.elf
+*.gba
+*.tar.gz
+
+result*
