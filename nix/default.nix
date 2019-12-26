@@ -38,6 +38,7 @@ with rec {
     executableName = "Tetris";
     attrs.meta = with pkgs.stdenv.lib; {
       description = "A basic Tetris game for the GBA";
+      license = licenses.gpl3;
     };
   };
 }
