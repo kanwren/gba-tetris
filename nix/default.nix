@@ -8,8 +8,8 @@ with rec {
         cs2110src = super.fetchFromGitHub {
           owner = "nprindle";
           repo = "cs2110-nix";
-          rev = "75949c31e0a9cda14ae5e655b33bcd7dbe98f9c9";
-          sha256 = "0kjxng2idjv3hi9wyl56k0rxi6n3l2bqvrhgizcsy60i71sklbmc";
+          rev = "f9dd686e7ffa79c944f5fbc3d0fc4ccfacc82199";
+          sha256 = "01wj36yahzww7zb3vd630dm7palb826k5pvd3ifdwhz9bmwcmp5j";
         };
       in import cs2110src {};
   };
