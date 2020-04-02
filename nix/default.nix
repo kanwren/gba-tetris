@@ -39,7 +39,7 @@ with rec {
     cfgFile = ../mednafen-09x.cfg;
     attrs.meta = with pkgs.stdenv.lib; {
       description = "A basic Tetris game for the GBA";
-      license = licenses.gpl3;
+      license = licenses.mit;
     };
   };
 }
