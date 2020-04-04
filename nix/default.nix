@@ -8,8 +8,8 @@ with rec {
         cs2110src = super.fetchFromGitHub {
           owner = "nprindle";
           repo = "cs2110-nix";
-          rev = "62a79ef18bfef24aac2ef22642c2d2f99e4e3242";
-          sha256 = "1x0rsspilhkxvl8zcm9p6m52l34xwyhwz4inra2m43vhscmxxv01";
+          rev = "57f38afc31ea99b8b68bca7e61c370c234f172ee";
+          sha256 = "1vrb024k2ark6w265ync6y921s41plkk0gb09y0zqjk698wyhgk0";
         };
       in import cs2110src {};
   };
@@ -35,7 +35,7 @@ with rec {
 
   gba-tetris = pkgs.cs2110.makeGBA {
     src = ../.;
-    executableName = "Tetris";
+    name = "Tetris";
     cfgFile = ../mednafen-09x.cfg;
     attrs.meta = with pkgs.stdenv.lib; {
       description = "A basic Tetris game for the GBA";
