@@ -1,1 +1,1 @@
-(import nix/default.nix {}).gba-tetris
+(import nix/default.nix).gba-tetris

@@ -1,1 +1,1 @@
-(import nix/default.nix {}).env
+(import nix/default.nix).shell
