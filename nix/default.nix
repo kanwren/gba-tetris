@@ -8,8 +8,8 @@ with rec {
         cs2110src = super.fetchFromGitHub {
           owner = "nprindle";
           repo = "cs2110-nix";
-          rev = "57f38afc31ea99b8b68bca7e61c370c234f172ee";
-          sha256 = "1vrb024k2ark6w265ync6y921s41plkk0gb09y0zqjk698wyhgk0";
+          rev = "e25774440dd3cfd19fa2f9d62bbdb82cbe8bfa83";
+          sha256 = "02p39jri9ka99c1k6wx5b72p89lbpl72slhcl3y53wajsmvp3j5r";
         };
       in import cs2110src {};
   };
@@ -26,11 +26,15 @@ with rec {
 {
   env = pkgs.mkShell {
     buildInputs = with pkgs; [
-      cmake
-      gcc
+      gnumake
+      mednafen
+      gcc-arm-embedded
       cs2110.nin10kit
       cs2110.cs2110-vbam-sdl
     ];
+    shellHook = with pkgs; ''
+      export LINKSCRIPT_DIR="${cs2110.cs2110-gba-linker-script}"
+    '';
   };
 
   gba-tetris = pkgs.cs2110.makeGBA {

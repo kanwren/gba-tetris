@@ -1,12 +1,14 @@
 PROGNAME = Tetris
 
-SRC_DIR = src
+SRC_DIR = ./src
+OBJ_DIR = ./build
+
+VPATH = $(SRC_DIR)
 
 # Source files
-SRC = $(wildcard $(SRC_DIR)/*.c) $(wildcard $(SRC_DIR)/**/*.c)
+SRC = $(shell find $(SRC_DIR) -name "*.c" -or -name "*.s")
 # Resulting object files
-# TODO: dump into separate OBJ_DIR directory
-OBJ = $(patsubst $(SRC_DIR)/%.c,$(SRC_DIR)/%.o,$(SRC))
+OBJ = $(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(SRC))
 
 .PHONY: all
 all : CFLAGS += $(CRELEASE) -I../shared
@@ -14,9 +16,7 @@ all : LDFLAGS += $(LDRELEASE)
 all : $(PROGNAME).gba
 	@echo "[FINISH] Created $(PROGNAME).gba"
 
-# In case this is being built using Brandon's PPA
-LINKSCRIPT_DIR ?= /opt/cs2110-tools
-include $(LINKSCRIPT_DIR)/GBAVariables.mak
+include ${LINKSCRIPT_DIR}/GBAVariables.mak
 
 CFLAGS += -Wstrict-prototypes -Wold-style-definition
 
@@ -32,7 +32,8 @@ $(PROGNAME).gba : $(PROGNAME).elf
 $(PROGNAME).elf : crt0.o $(GCCLIB)/crtbegin.o $(GCCLIB)/crtend.o $(GCCLIB)/crti.o $(GCCLIB)/crtn.o $(OBJ) libc_sbrk.o
 	$(CC) -o $(PROGNAME).elf $^ $(LDFLAGS)
 
-$(OBJ_DIR)/%.o : $(SRC)
+$(OBJ_DIR)/%.o : $(SRC_DIR)/%.c
+	@mkdir -p $(dir $@)
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
 
 # These are unnecessary if building with nix
