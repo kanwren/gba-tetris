@@ -62,4 +62,4 @@ med : $(PROGNAME).gba
 .PHONY : clean
 clean :
 	@echo "[CLEAN] Removing all compiled files"
-	rm -f *.o *.elf *.gba *.log */*.o
+	rm -rf $(OBJ_DIR) *.o *.elf *.gba *.log
