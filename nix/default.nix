@@ -8,7 +8,6 @@ in {
   gba-tetris = cs2110.makeGBA {
     src = ../.;
     name = "Tetris";
-    cfgFile = ../mednafen-09x.cfg;
     attrs.meta = with pkgs.stdenv.lib; {
       description = "A basic Tetris game for the GBA";
       license = licenses.mit;
