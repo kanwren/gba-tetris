@@ -5,10 +5,10 @@
         "homepage": null,
         "owner": "nprindle",
         "repo": "cs2110-nix",
-        "rev": "b3490c5ffab336e1aa6085b11308aa45fc07d200",
-        "sha256": "0fadchasaqnkhxbmqp408ihbips6i2frbd0r97j4zp3fh4d2g8jf",
+        "rev": "db1ed707c5b3daf2b9c3142d2b143c4a70ebdefa",
+        "sha256": "073wd4n625aydcp290qgvsx8was9wm6gcq0mdk4kivywdg4vcd7n",
         "type": "tarball",
-        "url": "https://github.com/nprindle/cs2110-nix/archive/b3490c5ffab336e1aa6085b11308aa45fc07d200.tar.gz",
+        "url": "https://github.com/nprindle/cs2110-nix/archive/db1ed707c5b3daf2b9c3142d2b143c4a70ebdefa.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "niv": {
